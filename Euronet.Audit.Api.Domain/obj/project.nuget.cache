@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wYASNQfll2ZXS1AFDFHEi3k+eUpNlLtmj7Clsjbo0RQ0z1eMEjX2vlffu9cJZhKC71biPssurdA+4CcY2Y6lCg==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\Euronet\\DccMeter2\\Euronet.Audit.Api.Domain\\Euronet.Audit.Api.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\BG HiL Computers\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

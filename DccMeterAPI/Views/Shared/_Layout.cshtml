@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+@using DccMeter.API.Settings
+@{
+    var baseurl = Context.Request.Host.Value;
+    var pathbase = Context.Request.PathBase.Value;
+    var scheme = Context.Request.Scheme;
+
+    var swaggerUiUri = $"{scheme}://{baseurl}{pathbase}{Settings.Instance.SwaggerSettings.Url ?? ("/swagger")}";
+    var swaggerJsonUri = $"{scheme}://{baseurl}{pathbase}{Settings.Instance.SwaggerSettings.JsonUrl ?? ("/swagger/v1/swagger.json")}";
+
+    string pageTitle = ViewData["Title"]?.ToString();
+
+    string title = "DCC Meter Api";
+
+    if (!String.IsNullOrEmpty(pageTitle))
+    {
+        title = $"{pageTitle} | {title}";
+    }
+
+    string version = "v1";// AppSettings.Instance?.SwaggerSettings?.DocumentSettings?.Version;
+
+    if (true)//(version.IsNullOrEmpty())
+    {
+        version = "v1";
+    }
+
+    object noSidebarMenu = ViewData["NoSidebarMenu"];
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>@title</title>
+
+    <link href="~/lib/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="~/css/style.min.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="app-header">
+
+        <nav class="navbar">
+
+            <div class="container">
+
+                <a class="nav-link pl-0" asp-action="Index" asp-controller="Home"><h3><strong>DCC Meter</strong> Api <strong>@version</strong></h3></a>
+
+                <ul class="nav navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Documentation" asp-controller="Home">Documentation</a>
+                    </li>
+
+                    @if(Settings.Instance.SwaggerSettings.UseSwagger)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@swaggerUiUri">Swagger UI</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="@swaggerJsonUri">Swagger specification</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="app-body">
+
+        <main class="main">
+
+            <div class="container mt-4">
+
+                @if (noSidebarMenu == null)
+                {
+                    <div class="row">
+
+                        <div id="main-content" class="main-content col-9">@RenderBody()</div>
+
+                        <div id="sidebar-menu" class="col-3">
+                            <ul class="list-group sidebar-menu ">
+                                <li class="list-group-item"><a asp-action="Documentation" asp-controller="Home">Overview</a></li>
+                                <li class="list-group-item"><a asp-action="TestProject" asp-controller="Home">Test projects API</a></li>
+                                <li class="list-group-item"><a asp-action="TestSuites" asp-controller="Home">Test suites API</a></li>
+                                <li class="list-group-item"><a asp-action="TestCases" asp-controller="Home">Test cases API</a></li>
+                                <li class="list-group-item"><a asp-action="TestPlans" asp-controller="Home">Test plans API</a></li>
+                                <li class="list-group-item"><a asp-action="Test" asp-controller="Home">Tests API</a></li>
+                                <li class="list-group-item"><a asp-action="Resources" asp-controller="Home">Resources</a></li>
+                                <li class="list-group-item"><a asp-action="Enumerations" asp-controller="Home">Enumerations</a></li>
+                                <li class="list-group-item"><a asp-action="ErrorCodes" asp-controller="Home">Error codes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    @RenderBody()
+                }
+            </div>
+        </main>
+
+    </div>
+
+    <footer class="app-footer">
+        <div class="container">
+            <span class="text-muted">© @DateTime.Today.Year Euronet App Development. All rights reserved.</span>
+        </div>
+
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

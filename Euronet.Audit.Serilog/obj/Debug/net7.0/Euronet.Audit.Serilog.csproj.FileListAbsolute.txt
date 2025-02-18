@@ -1,0 +1,17 @@
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\bin\Debug\net7.0\Euronet.Audit.Serilog.deps.json
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\bin\Debug\net7.0\Euronet.Audit.Serilog.dll
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\bin\Debug\net7.0\Euronet.Audit.Serilog.pdb
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\bin\Debug\net7.0\Euronet.Audit.dll
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\bin\Debug\net7.0\Euronet.Web.Mvc.dll
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\bin\Debug\net7.0\Euronet.Audit.pdb
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\bin\Debug\net7.0\Euronet.Web.Mvc.pdb
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\Euronet.Audit.Serilog.csproj.AssemblyReference.cache
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\Euronet.Audit.Serilog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\Euronet.Audit.Serilog.AssemblyInfoInputs.cache
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\Euronet.Audit.Serilog.AssemblyInfo.cs
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\Euronet.Audit.Serilog.csproj.CoreCompileInputs.cache
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\Euronet.Audit.Serilog.csproj.CopyComplete
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\Euronet.Audit.Serilog.dll
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\refint\Euronet.Audit.Serilog.dll
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\Euronet.Audit.Serilog.pdb
+C:\Projects\Euronet\DccMeter2\Euronet.Audit.Serilog\obj\Debug\net7.0\ref\Euronet.Audit.Serilog.dll

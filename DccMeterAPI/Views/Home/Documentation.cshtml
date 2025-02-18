@@ -1,0 +1,412 @@
+﻿@using DccMeter.API.Settings;
+@{
+    string version = Settings.Instance?.SwaggerSettings?.Version ?? "v1";
+
+    var scheme = Context.Request.Scheme;
+
+    var defaultPageSize = 20;
+
+    var pageSizeLimit = 50;
+
+    var versionUrl = Context.Request.GetVersionedPrefix(false);
+
+    var schemaVersionUrl = Context.Request.GetVersionedPrefix();
+
+    string identityUrl = "localhost:7197";
+    
+    string schemaIdentityUrl = scheme + "://" + identityUrl;
+
+    var apiName = "DCC Meter Api";
+}
+
+<div>
+    <h1>
+        Overview
+    </h1>
+
+    <h2 style="color:red">
+        IN PROGRESS
+    </h2>
+
+    <p>Following text describes main design principles and usage of the @apiName @version.</p>
+
+    <ul id="toc" class="in-content-list">
+        <li><a href="#basics" id="toc-basics">Basics</a></li>
+        <li><a href="#authentication" id="toc-authentication">Authentication</a></li>
+        <li><a href="#http-verbs" id="toc-http-verbs">HTTP verbs</a></li>
+        <li><a href="#parameters" id="toc-parameters">Parameters</a></li>
+        <li><a href="#pagination" id="toc-pagination">Pagination</a></li>
+        <li><a href="#sorting" id="toc-sorting">Sorting</a></li>
+        <li><a href="#shaping" id="toc-shaping">Shaping</a></li>
+        <li><a href="#errors" id="toc-client-errors">Errors</a></li>
+    </ul>
+
+    <h2>
+        <a id="basics" class="anchor" href="#basics" aria-hidden="true"></a>Basics
+    </h2>
+
+    <p>
+        All @apiName access is over @scheme.ToUpper() and accessed from <code>@versionUrl</code>. Note that URI versioning is applied and version could not be ommited.
+        Current @apiName version is <code>@version</code>.
+    </p>
+
+    <p>
+        All data are sent (in response bodies) and received (in request bodies) as JSON. Each request should have <code>Content-Type</code> header with <code>application/json</code> value.
+    </p>
+
+    <p>Fields that do not have value are ommited instead of being included as <code>null</code>.</p>
+
+    <p>
+        Enumerations are represented using their human readable form, instead of their integer values. See <a asp-controller="Home" asp-action="Enumerations">Enumerations</a>
+        for list of enumeration which are used by @apiName, as well as their available values.
+    </p>
+
+    <p>All timestamps are returned in ISO 8601 format: <code>YYYY-MM-DDTHH:MM:SSZ</code>.</p>
+
+    <h2>
+        <a id="authentication" class="anchor" href="#authentication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authentication
+    </h2>
+
+    <p class="under-construction">
+        Under construction!    
+    </p>
+
+    <h2>
+        <a id="http-verbs" class="anchor" href="#http-verbs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTTP verbs
+    </h2>
+
+    <p>
+        @apiName @version uses HTTP verbs listed in the following table and tries to be compliant with described verb usage.
+    </p>
+
+    <table class="parameters-table">
+        <thead>
+            <tr>
+                <th>Verb</th>
+                <th>Description</th>
+                <th>Response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>GET</code></td>
+                <td>Retrieves a representation of the resource(s) at the specified URI.</td>
+                <td>A successful method returns HTTP status code <code>200 OK</code>. The body of the response message contains the details of the requested resource(s).</td>
+            </tr>
+            <tr>
+                <td><code>POST</code></td>
+                <td>Creates a new resource at the specified URI. The body of the request message provides the details of the new resource.</td>
+                <td>A successful method returns HTTP status code <code>201 Created</code>.</td>
+            </tr>
+            <tr>
+                <td><code>PATCH</code></td>
+                <td>Performs a partial update of a resource. The request body specifies the set of changes to apply to the resource.</td>
+                <td>A successful method returns HTTP status code <code>200 OK</code>. The body of the response message contains the details of the patched resource.</td>
+            </tr>
+            <tr>
+                <td><code>PUT</code></td>
+                <td>Creates or replaces the resource(s) at the specified URI. The body of the request message specifies the resource(s) to be created or replaced.</td>
+                <td>A successful method returns HTTP status code <code>204 No Content</code>.</td>
+            </tr>
+            @*<tr>
+                    <td><code>DELETE</code></td>
+                    <td>Removes the resource at the specified URI.</td>
+                    <td>A successful method returns HTTP status code <code>204 No Content</code>.</td>
+                </tr>*@
+        </tbody>
+    </table>
+
+    <h2>
+        <a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parameters
+    </h2>
+
+    <p><code>kebab-case</code> is used as a naming convention for parameters (e.g. <code>phone-number</code>).
+
+    <p>
+        This documentation labels path parameters using <span class="path badge badge-danger">path</span>. Path parameters are implicitly required.
+        Other Url parameters, not marked with <span class="path badge badge-danger">path</span>, are query parameters and, unless otherwise stated,
+        they are optional.
+    </p>
+
+    <p>Query parameteres which represent list of values are send by repeating them in the query string:</p>
+
+    <pre><code>@schemaVersionUrl/products/categories?excludes=children&excludes=parent</code>.</pre>
+
+    <h2>
+        <a id="pagination" class="anchor" href="#pagination" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pagination
+    </h2>
+
+    <p>
+        Most requests that return multiple items will be paginated to @defaultPageSize items by
+        default. You can specify further pages with the <code>?page_number</code> parameter. You can set
+        a custom page size up to @pageSizeLimit with the <code>?page_size</code> parameter.
+    </p>
+
+    <pre><code>@schemaVersionUrl/customers/622112345678/coupons?page_number=2&page_size=12</code></pre>
+
+    <p>
+        Note that page numbering is 1-based and that omitting the <code>page_number</code>
+        parameter will return the first page.
+    </p>
+
+    <p>
+        API methods that support pagination will be taged with <span class="pageable badge badge-primary">pageable</span>.
+    </p>
+
+    <h2>
+        <a id="sorting" class="anchor" href="#sorting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sorting
+    </h2>
+
+    <p>
+        @apiName <code>GET</code> methods, which return list of items, support sorting. By default, items will be randomly sorted, unless  both query parameters
+        <code>sort-by</code> and <code>sort-direction</code> are not specified.
+    </p>
+
+    <pre><code>@schemaVersionUrl/customers/622112345678/transactions?sort-by=creation-time&sort-direction=dsc</code></pre>
+
+    <p>
+        Sort direction enumeration identifies possible values for parameter <code>sort-by</code>.
+    </p>
+
+    <table class="parameters-table">
+        <thead>
+            <tr>
+                <th>Value</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>asc</code></td>
+                <td>
+                    The resulting list will be sorted in ascending order.
+                </td>
+            </tr>
+            <tr>
+                <td><code>dsc</code></td>
+                <td>The resulting list will be sorted in descending order.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Sorting direction is paired with, for specific request, relevant sorting option. Possible values for <code>sort-by</code> parameter depends on which resource list is requested. Refer to
+        list of <a asp-action="Enumerations" asp-controller="Home">enumerations</a>, as well as to the appropriate API method, to get possible values and additional details for sorting options.
+    </p>
+
+    In this documentation, API methods that support sorting will be taged with <span class="sortable badge badge-success">sortable</span>.
+
+    <h2>
+        <a id="shaping" class="anchor" href="#shaping" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Shaping
+    </h2>
+
+    <p>
+        Shaping allows to include or exclude fields from resulting resource representations.
+    </p>
+
+    <p>
+        If appropriate, @apiName <code>GET</code> methods support shaping through query parameter.
+        Methods that return single item could have <code>excludes</code> and <code>includes</code> parameteres, while those that return list of resources could have <code>includes</code> parameter.
+    </p>
+
+    <p>
+        When list of resources is retrieved, the response, by default, returns subset of the
+        fields for that resource, because some fields are computationally expensive for the API to provide,
+        or contain large amount of data (such is case with <code>array</code> of <code>bytes</code> image fields).
+        To obtain those, implicitly excluded fields, use <code>includes</code> query parameter.
+    </p>
+
+    <pre><code>@schemaVersionUrl/customers/622112345678/trasnactions?includes=merchant-image&includes=partner-image</code></pre>
+
+    <p>
+        When single resource is retrieved, the response typically includes all fields for that resource. If some of resource fields aren't needed,
+        it is posssible to exclude one (or more) of them using <code>excludes</code> query parameters. Exception for this rule is
+        <code>content</code> field when <a asp-action="Resources" asp-controller="Home" asp-fragment="Image">Image</a> is returned:
+        this field is implicitly excluded and <code>includes</code> query parameter should be used to explicitlly include image content.
+    </p>
+
+    <p>
+        In most cases API provides methods to fetch fields which are excluded with <code>excludes</code> parameter.
+    </p>
+
+    <p>
+        Refer to the list of <a asp-action="Enumerations" asp-controller="Home">enumerations</a>, as well as to the desired API methods, to get possible values and additional details for shaping options.
+    </p>
+
+    <p>
+        In this documentation, API methods that support shaping will be taged with <span class="sheapable badge badge-warning">shapeable</span>.
+    </p>
+
+    <h2>
+        <a id="errors" class="anchor" href="#client-errors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Errors
+    </h2>
+
+    <p>In case when error occurs, @apiName returns one of HTTP status codes listed in the following table.</p>
+
+    <table class="parameters-table">
+        <thead>
+            <tr>
+                <th>Status code</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>400 Bad Request</code></td>
+                <td>
+                    Returned when request contains invalid data or when request does not fulfill server validation.
+                </td>
+            </tr>
+            <tr>
+                <td><code>401 Unauthorized</code></td>
+                <td>
+                    Indicates that the request has not been applied because it lacks valid authentication credentials for the target resource.
+                </td>
+            </tr>
+            <tr>
+                <td><code>404 Not Found</code></td>
+                <td>Indicates that the server can't find the requested resource</td>
+            </tr>
+            @*<tr>
+                    <td><code>409 Conflict</code></td>
+                    <td>Indicates that request could not be processed due to current state of the server.</td>
+                </tr>*@
+            <tr>
+                <td><code>500 Internal Server Error</code></td>
+                <td>Indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>@apiName uses following model as a response body when error occurs.</p>
+
+    <table class="parameters-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>code</code><span class="required badge badge-danger">required</span></td>
+                <td><code>integer</code></td>
+                <td>
+                    Error code gives additional explanation about error that has been occured. While there could be error codes
+                    that match HTTP status code values, these two are not the same. Refer to <a asp-action="ErrorCodes" asp-controller="Home">error codes</a> to get more details.
+                </td>
+            </tr>
+            <tr>
+                <td><code>message</code></td>
+                <td><code>string</code></td>
+                <td>
+                    Human readable error message in English.
+                </td>
+            </tr>
+            <tr>
+                <td><code>severity</code><span class="required badge badge-danger">required</span></td>
+                <td><code>string</code></td>
+                <td>
+                    Identifies severity of the error. While list of possible severity values includes: <code>info</code>, <code>warning</code> and <code>error</code>,
+                    only <code>error</code> is used.
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>source</code></td>
+                <td><code>string</code></td>
+                <td>
+                    Identifies source of the error. Could give more insight on cause of the error.
+                </td>
+            </tr>
+            <tr>
+                <td><code>inner-exceptions</code></td>
+                <td><code>array</code> of <code>objects</code></td>
+                <td>
+                    If present contains list of inner errors. This is mainly used for request validation when multiple validation messages are returned.
+                    In that case there is a wrapping error with generic <code>400 Bad Request</code> code and with the list of inner errors which are described
+                    with more meaningfull codes. When Api returns only one validation message then it returns error with specific error code and without inner errors.
+                    It is not expected that inner errors contain their own inner errors.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Response examples</h3>
+
+    <p>
+        Following text contains examples of response bodies for the each of relevant HTTP status codes.
+
+        <h4>400 Bad Request</h4>
+
+        When API method for point registration
+
+        <pre><code>@schemaVersionUrl/customers/points-collection-transactions</code></pre>
+
+        is called with this request body
+
+        <pre><code>{
+    "phone-number": "622112345678",
+    "number-of-points": 0,
+    "description": "Reading news",
+    "location": "www.liputan6.com"
+}</code></pre>
+
+        following response is returned
+
+        <pre><code>{
+    "code": 400,
+    "message": "There are multiple errors. See inner exceptions for additional details.",
+    "severity": "error",
+    "inner-exceptions": [
+        {
+            "code": 10103,
+            "message": "Number of points must be greater than zero.",
+            "severity": "error"
+        },
+        {
+            "code": 11205,
+            "message": "Partner code not provided.",
+            "severity": "error"
+        }
+    ]
+}</code></pre>
+
+        <h4>401 Unauthorized</h4>
+
+        When client is not authorized to access resource following response is returned
+
+        <pre><code>{
+    "code": 401,
+    "message": "Unauthorized.",
+    "severity": "error
+}
+</code></pre>
+
+        <h4>404 Not Found</h4>
+
+        When API method to get customer profile
+
+        <pre><code>@schemaVersionUrl/customers/62219876543</code></pre>
+
+        for non-existing customer is called, then following response is returned
+
+        <pre><code>{
+    "code": 10001,
+    "message": "Customer with the phone number '62219876543' not found.",
+    "severity": "error"
+}</code></pre>
+
+        <h4>500 Internal Server Error</h4>
+
+        When unexpected server error occurs API returns following response
+
+        <pre><code>{
+    "code": 500,
+    "message": "Internal server error.",
+    "severity": "error
+}
+</code></pre>
+
+</div>

@@ -1,0 +1,17 @@
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\bin\Debug\net7.0\Euronet.Audit.Serilog7.deps.json
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\bin\Debug\net7.0\Euronet.Audit.Serilog7.dll
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\bin\Debug\net7.0\Euronet.Audit.Serilog7.pdb
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\bin\Debug\net7.0\Euronet.Audit.dll
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\bin\Debug\net7.0\Euronet.Web.Mvc.dll
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\bin\Debug\net7.0\Euronet.Audit.pdb
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\bin\Debug\net7.0\Euronet.Web.Mvc.pdb
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\Euronet.Audit.Serilog7.csproj.AssemblyReference.cache
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\Euronet.Audit.Serilog7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\Euronet.Audit.Serilog7.AssemblyInfoInputs.cache
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\Euronet.Audit.Serilog7.AssemblyInfo.cs
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\Euronet.Audit.Serilog7.csproj.CoreCompileInputs.cache
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\Euronet.Audit.Serilog7.csproj.CopyComplete
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\Euronet.Audit.Serilog7.dll
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\refint\Euronet.Audit.Serilog7.dll
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\Euronet.Audit.Serilog7.pdb
+C:\Projects\Euronet\DccMeter2\DccMeter.Api.2\Euronet.Audit.Serilog7\obj\Debug\net7.0\ref\Euronet.Audit.Serilog7.dll

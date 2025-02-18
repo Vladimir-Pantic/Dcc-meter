@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Dtc.AccessSight.Audit</id>
+    <version>1.3.3</version>
+    <authors>Dtc</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <description>Dtc AccessSight Audit</description>
+    <copyright>2020</copyright>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="Dtc.AccessSight.Http" version="1.3.3" exclude="Build,Analyzers" />
+        <dependency id="Dtc.AccessSight.System" version="1.3.3" exclude="Build,Analyzers" />
+        <dependency id="Dtc.AccessSight.Web.Mvc" version="1.3.3" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net5.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Projects\Dtc\access-sight-5\Dtc.AccessSight.Audit\bin\Debug\net5.0\Dtc.AccessSight.Audit.dll" target="lib\net5.0\Dtc.AccessSight.Audit.dll" />
+  </files>
+</package>

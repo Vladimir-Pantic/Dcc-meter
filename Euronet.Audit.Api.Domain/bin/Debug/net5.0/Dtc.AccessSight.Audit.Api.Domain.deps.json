@@ -1,0 +1,114 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Dtc.AccessSight.Audit.Api.Domain/1.2.5": {
+        "dependencies": {
+          "Dtc.AccessSight.System": "1.2.0",
+          "Dtc.AccessSight.Web.Mvc": "1.2.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "Dtc.AccessSight.Audit.Api.Domain.dll": {}
+        }
+      },
+      "Dtc.AccessSight.Exceptions/1.2.0": {
+        "dependencies": {
+          "Dtc.AccessSight.System": "1.2.0"
+        },
+        "runtime": {
+          "lib/net5.0/Dtc.AccessSight.Exceptions.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "Dtc.AccessSight.System/1.2.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/net5.0/Dtc.AccessSight.System.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "Dtc.AccessSight.Web.Mvc/1.2.0": {
+        "dependencies": {
+          "Dtc.AccessSight.Exceptions": "1.2.0",
+          "Dtc.AccessSight.System": "1.2.0",
+          "Serilog": "2.10.0"
+        },
+        "runtime": {
+          "lib/net5.0/Dtc.AccessSight.Web.Mvc.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "Serilog/2.10.0": {
+        "runtime": {
+          "lib/netstandard2.1/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.10.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Dtc.AccessSight.Audit.Api.Domain/1.2.5": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Dtc.AccessSight.Exceptions/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LtY2a+BypaaGIS2OicbYIvbui0EQ1v2sbmfypY5WHxVCt3Sc1hVfJbp8UNNopZfRFqlPjGGfc8igFfA3l8TpPA==",
+      "path": "dtc.accesssight.exceptions/1.2.0",
+      "hashPath": "dtc.accesssight.exceptions.1.2.0.nupkg.sha512"
+    },
+    "Dtc.AccessSight.System/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-csOehHeXQsUgaXC34ztJbLbpmq13+5KWcpp/Qhs62vd6ASXS5D9bFLDAv6kOMZao5SfogNFdJfe1wCdPx5+SOQ==",
+      "path": "dtc.accesssight.system/1.2.0",
+      "hashPath": "dtc.accesssight.system.1.2.0.nupkg.sha512"
+    },
+    "Dtc.AccessSight.Web.Mvc/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EShkjaKE18RM85Ah/60N+IUOwhSgSwHe2ycwgSv4vTw4GjmQ5j7ZTfP8IYw5aXOB/920VqZNKpKauuYd/MAzuw==",
+      "path": "dtc.accesssight.web.mvc/1.2.0",
+      "hashPath": "dtc.accesssight.web.mvc.1.2.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Serilog/2.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+QX0hmf37a0/OZLxM3wL7V6/ADvC1XihXN4Kq/p6d8lCPfgkRdiuhbWlMaFjR9Av0dy5F0+MBeDmDdRZN/YwQA==",
+      "path": "serilog/2.10.0",
+      "hashPath": "serilog.2.10.0.nupkg.sha512"
+    }
+  }
+}

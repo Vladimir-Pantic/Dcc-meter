@@ -1,0 +1,39 @@
+﻿@using System;
+@using DccMeter.API.Settings;
+
+@{
+    var builder = WebApplication.CreateBuilder();
+    var baseurl = Context.Request.Host.Value;
+    var pathbase = Context.Request.PathBase.Value;
+    var scheme = Context.Request.Scheme;
+
+    var swaggerUiUri = $"{scheme}://{baseurl}{pathbase}{Settings.Instance.SwaggerSettings.Url ?? ("/swagger")}";
+    var swaggerJsonUri = $"{scheme}://{baseurl}{pathbase}{Settings.Instance.SwaggerSettings.JsonUrl ?? ("/swagger/v1/swagger.json")}";
+
+    ViewData["Title"] = "Home";
+
+    ViewData["NoSidebarMenu"] = true;
+}
+
+<div>
+
+    <h4 style="text-align:center">
+        Wellcome to DCC Meter Api site!
+    </h4>
+
+    @if(Settings.Instance.SwaggerSettings.UseSwagger)
+    {
+        <p style="text-align:center">
+            Click <a href=@swaggerUiUri>here</a> to view the Swagger UI.
+        </p>
+
+        <p style="text-align:center">
+            Click <a href=@swaggerJsonUri>here</a> to view the Swagger specification.
+        </p>
+    }
+    
+    <p style="text-align:center">
+        Click <a asp-action="Documentation" asp-controller="Home">here</a> to view the documentation.
+    </p>
+
+</div>

@@ -1,0 +1,211 @@
+﻿body {
+    background-color: white !important;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+footer {
+    /*position: absolute;
+	bottom: 0;
+	width: 100%;*/
+    padding: 1rem !important;
+}
+
+/*.container {
+	max-width: 1020px!important;
+}*/
+
+.app-header {
+    background-color: #f85032;
+    border-bottom-color: #e73827;
+    color: white;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 16px;
+}
+
+.app-footer {
+    background-color: white;
+}
+
+.app-header .nav-link {
+    color: white;
+    outline-style: none;
+}
+
+    .app-header .nav-link:hover {
+        color: rgb(200, 200, 200)
+    }
+
+.nav .nav-item {
+    margin-left: 1rem;
+}
+
+.sidebar-menu {
+    margin-top: .5rem;
+    border-left: 2px solid white;
+}
+
+    /*.sidebar-menu:hover {
+	border-left: 2px solid rgb(230, 230, 230);
+}*/
+
+
+    .sidebar-menu .list-group-item {
+        background-color: inherit;
+        padding: 0px;
+        border: none;
+    }
+
+    .sidebar-menu a {
+        margin: 0px;
+        padding: .5rem;
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: black;
+        outline-style: none;
+        text-decoration: none;
+    }
+
+        .sidebar-menu a:hover {
+            background-color: rgb(250, 250, 250);
+            border-left: 2px solid rgb(230, 230, 230);
+        }
+
+pre {
+    border: 1px solid rgb(240, 240, 240);
+    line-height: 1.4em;
+    padding: 10px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: rgb(250, 250, 250);
+    color: #393939;
+    margin: 2em 0;
+}
+
+p code, td code {
+    border-radius: 3px;
+    border: 1px solid rgb(240, 240, 240);
+    background-color: rgb(250, 250, 250);
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+code {
+    color: inherit;
+}
+
+.in-content-list {
+    list-style-type: lower-latin;
+    margin-left: 0;
+    padding-left: 1rem;
+}
+
+    .in-content-list a {
+        text-decoration: none;
+        outline-style: none;
+        color: black;
+    }
+
+        .in-content-list a:hover {
+            color: rgb(150, 150, 150);
+            text-decoration: underline;
+        }
+
+.parameters-table {
+    width: 100%;
+    overflow: auto;
+    display: block;
+    margin: 15px 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+    .parameters-table thead {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    .parameters-table tbody {
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    .parameters-table tr {
+        border-top: 1px solid #ccc;
+        background-color: #fff;
+        vertical-align: inherit;
+    }
+
+    .parameters-table th {
+        border: 1px solid #ddd;
+        padding: 6px 13px;
+        text-align: center;
+    }
+
+    .parameters-table td {
+        border: 1px solid #ddd;
+        padding: 6px 13px;
+    }
+
+    .parameters-table tbody tr:hover {
+        background-color: rgb(250, 250, 250);
+    }
+
+.tab-content {
+    border: none;
+}
+
+    .tab-content .tab-pane {
+        padding: 0px;
+    }
+
+        .tab-content .tab-pane pre {
+            margin-top: 0.25rem;
+        }
+
+.nav-tabs {
+    border: none;
+}
+
+    .nav-tabs li {
+        padding-left: .25rem;
+    }
+
+        .nav-tabs li a.active {
+            display: none;
+        }
+
+        .nav-tabs li a {
+            text-decoration: none;
+        }
+
+table thead tr th:last-child {
+    width: 60%
+}
+
+p.under-construction {
+    font-size: 24px; /* Make the text larger */
+    font-weight: bold; /* Make the text bold */
+    color: #e74c3c; /* Use a red color */
+    background-color: #f39c12; /* Set a yellow background color */
+    padding: 10px; /* Add some space inside the element */
+    border-radius: 5px; /* Round the corners */
+    text-align: center; /* Center the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    font-family: 'Arial', sans-serif; /* Set a clean, readable font */
+    max-width: 300px; /* Optional: Set a max width */
+    margin: 20px auto; /* Center the element horizontally */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 2px; /* Add some space between letters */
+}

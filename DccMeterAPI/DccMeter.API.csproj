@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.20">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.20" />
+    <PackageReference Include="NSwag.AspNetCore" Version="14.2.0" />
+    <PackageReference Include="Serilog" Version="4.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DccMeter.Api.2\Euronet.Audit.Serilog7\Euronet.Audit.Serilog.csproj" />
+    <ProjectReference Include="..\DccMeter.Repository.SQLServer\DccMeter.Repository.SQLServer.csproj" />
+    <ProjectReference Include="..\Euronet.Audit.Api.Domain\Euronet.Audit.Api.Domain.csproj" />
+    <ProjectReference Include="..\Euronet.Audit.Serilog.SqlServer\Euronet.Audit.Serilog.SqlServer.csproj" />
+    <ProjectReference Include="..\Euronet.Audit\Euronet.Audit.csproj" />
+    <ProjectReference Include="..\Euronet.System\Euronet.System.csproj" />
+  </ItemGroup>
+
+</Project>
